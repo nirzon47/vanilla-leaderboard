@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Leaderboards</title>
+
+		<!-- Tailwind -->
+		<link rel="stylesheet" href="styles/output.css" />
+
+		<!-- Fontawesome -->
+		<script
+			src="https://kit.fontawesome.com/d521bbec8a.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body class="min-h-screen w-screen py-8">
+		<div class="max-w-6xl mx-auto">
+			<h1 class="font-bold text-3xl mb-4">Points Leaderboards</h1>
+			<form class="flex justify-between mb-4">
+				<input
+					type="text"
+					placeholder="First name"
+					class="input input-bordered w-1/5"
+					required
+				/>
+				<input
+					type="text"
+					placeholder="Last name"
+					class="input input-bordered w-1/5"
+					required
+				/>
+				<input
+					type="text"
+					placeholder="Country"
+					class="input input-bordered w-1/5"
+					required
+				/>
+				<input
+					type="number"
+					placeholder="Score"
+					class="input input-bordered w-1/5"
+					required
+				/>
+				<button class="btn btn-primary w-1/12">Add</button>
+			</form>
+
+			<div class="overflow-x-auto">
+				<table class="table">
+					<thead class="text-base text-center">
+						<tr>
+							<th>Name</th>
+							<th>Country</th>
+							<th>Score</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody class="text-lg font-medium text-center text-neutral">
+						<tr class="hover duration-200">
+							<td>Nirzon Karmakar</td>
+							<td>India</td>
+							<td class="flex gap-x-4 items-center justify-center">
+								<button class="btn btn-info btn-sm w-12">-5</button>100<button
+									class="btn btn-info btn-sm w-12"
+								>
+									+5
+								</button>
+							</td>
+							<td>
+								<i
+									class="fa-solid fa-trash hover:text-red-600 duration-200 cursor-pointer"
+								></i>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>
