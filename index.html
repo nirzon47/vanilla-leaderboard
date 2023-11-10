@@ -17,32 +17,32 @@
 	<body class="min-h-screen w-screen py-8 px-4">
 		<div class="max-w-6xl mx-auto">
 			<h1 class="font-bold text-3xl mb-4">Points Leaderboards</h1>
-			<form class="flex justify-between mb-4">
+			<form class="flex justify-between mb-4 flex-wrap gap-2">
 				<input
 					type="text"
 					placeholder="First name"
-					class="input input-bordered w-1/5"
+					class="input input-bordered w-1/5 min-w-[110px]"
 					required
 				/>
 				<input
 					type="text"
 					placeholder="Last name"
-					class="input input-bordered w-1/5"
+					class="input input-bordered w-1/5 min-w-[110px]"
 					required
 				/>
 				<input
 					type="text"
 					placeholder="Country"
-					class="input input-bordered w-1/5"
+					class="input input-bordered w-1/5 min-w-[110px]"
 					required
 				/>
 				<input
 					type="number"
 					placeholder="Score"
-					class="input input-bordered w-1/5"
+					class="input input-bordered w-1/5 min-w-[110px]"
 					required
 				/>
-				<button class="btn btn-primary w-1/12">Add</button>
+				<button class="btn btn-primary w-1/12 min-w-[100px]">Add</button>
 			</form>
 
 			<div class="overflow-x-auto">
@@ -55,16 +55,17 @@
 							<th></th>
 						</tr>
 					</thead>
-					<tbody class="text-lg font-medium text-center text-neutral">
+					<tbody
+						class="text-lg font-medium text-center text-neutral"
+						id="tbody"
+					>
 						<tr class="hover duration-200">
 							<td>Nirzon Karmakar</td>
 							<td>India</td>
 							<td class="flex gap-x-4 items-center justify-center">
-								<button class="btn btn-info btn-sm w-12">-5</button>100<button
-									class="btn btn-info btn-sm w-12"
-								>
-									+5
-								</button>
+								<button class="btn btn-info btn-sm w-12 subtract5">-5</button>
+								<span>100</span>
+								<button class="btn btn-info btn-sm w-12 add5">+5</button>
 							</td>
 							<td>
 								<i
