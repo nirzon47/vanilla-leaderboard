@@ -12,9 +12,12 @@ form.addEventListener('submit', (e) => {
 	e.preventDefault()
 	if (validateForm()) {
 		addData()
+
 		setTimeout(() => {
 			validation.style.opacity = '0'
 		}, 100)
+
+		resetForm()
 	} else {
 		setTimeout(() => {
 			validation.style.opacity = '1'
@@ -85,4 +88,13 @@ const addData = () => {
 	})
 
 	setTimeout(renderTable(), 500)
+}
+
+const resetForm = () => {
+	const elements = form.elements
+
+	elements[0].value = ''
+	elements[1].value = ''
+	elements[2].value = ''
+	elements[3].value = ''
 }
