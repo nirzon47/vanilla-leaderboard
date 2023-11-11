@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const renderTable = () => {
 	const fragment = document.createDocumentFragment()
 	tbody.innerHTML = ''
+	sortData()
 
 	data.forEach((item) => {
 		const tr = document.createElement('tr')
@@ -34,4 +35,8 @@ const renderTable = () => {
 	})
 
 	tbody.appendChild(fragment)
+}
+
+const sortData = () => {
+	data.sort((o1, o2) => o2.score - o1.score)
 }
