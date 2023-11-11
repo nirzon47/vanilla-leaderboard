@@ -46,6 +46,12 @@ const addButtons = () => {
 }
 
 // Functions
+
+/**
+ * Renders a table based on the data provided.
+ *
+ * @return {void} The table is rendered in the DOM.
+ */
 const renderTable = () => {
 	const fragment = document.createDocumentFragment()
 	tbody.innerHTML = ''
@@ -79,10 +85,20 @@ const renderTable = () => {
 	addButtons()
 }
 
+/**
+ * Sorts the data array in descending order based on the score property of each object.
+ *
+ * @return {undefined} This function does not return a value.
+ */
 const sortData = () => {
 	data.sort((o1, o2) => o2.score - o1.score)
 }
 
+/**
+ * Validates the form by checking if all the required fields have been filled out.
+ *
+ * @return {boolean} Returns true if all required fields have been filled out, otherwise false.
+ */
 const validateForm = () => {
 	const elements = form.elements
 
@@ -98,6 +114,11 @@ const validateForm = () => {
 	}
 }
 
+/**
+ * Adds data to the data array and triggers a table render after a delay.
+ *
+ * @return {void} No return value.
+ */
 const addData = () => {
 	const elements = form.elements
 
@@ -112,6 +133,11 @@ const addData = () => {
 	setTimeout(renderTable(), 300)
 }
 
+/**
+ * Resets the form by clearing the values of all input elements.
+ *
+ * @param {object} form - The form element.
+ */
 const resetForm = () => {
 	const elements = form.elements
 
@@ -121,6 +147,12 @@ const resetForm = () => {
 	elements[3].value = ''
 }
 
+/**
+ * Updates the score of an item identified by the given id.
+ *
+ * @param {number} id - The id of the item to update.
+ * @return {undefined} - This function does not return a value.
+ */
 const add = (id) => {
 	const item = data.find((item) => item.id === id)
 
@@ -128,7 +160,6 @@ const add = (id) => {
 
 	renderTable()
 }
-
 const subtract = (id) => {
 	const item = data.find((item) => item.id === id)
 
@@ -137,6 +168,12 @@ const subtract = (id) => {
 	renderTable()
 }
 
+/**
+ * Delete data with the given ID from the data array.
+ *
+ * @param {number} id - The ID of the data to be deleted.
+ * @return {undefined} This function does not return anything.
+ */
 const deleteData = (id) => {
 	const index = data.findIndex((item) => item.id === id)
 
