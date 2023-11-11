@@ -15,8 +15,12 @@
 		></script>
 	</head>
 	<body class="min-h-screen w-screen py-8 px-4">
+		<!-- All content -->
 		<div class="max-w-6xl mx-auto">
+			<!-- Heading -->
 			<h1 class="font-bold text-3xl mb-4">Points Leaderboards</h1>
+
+			<!-- Form -->
 			<form class="flex justify-between mb-4 flex-wrap gap-2">
 				<input
 					type="text"
@@ -45,8 +49,15 @@
 				<button class="btn btn-primary w-1/12 min-w-[100px]">Add</button>
 			</form>
 
+			<!-- Validation -->
+			<p class="text-red-600 font-bold text-center py-2 opacity-0 duration-100">
+				Please fill in all fields
+			</p>
+
+			<!-- Table -->
 			<div class="overflow-x-auto">
-				<table class="table">
+				<table class="table table-zebra">
+					<!-- Table head -->
 					<thead class="text-base text-center">
 						<tr>
 							<th>Name</th>
@@ -55,11 +66,15 @@
 							<th></th>
 						</tr>
 					</thead>
+
+					<!-- Table body -->
 					<tbody
 						class="text-lg font-medium text-center text-neutral"
 						id="tbody"
 					>
-						<tr class="hover duration-200">
+						<!-- Mockup data -->
+						<!-- Data is rendered here -->
+						<tr>
 							<td>Nirzon Karmakar</td>
 							<td>India</td>
 							<td class="flex gap-x-4 items-center justify-center">
