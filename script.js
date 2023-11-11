@@ -9,9 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 form.addEventListener('submit', (e) => {
-	setTimeout(console.log(), 100000)
 	e.preventDefault()
-	validateForm()
+	if (validateForm()) {
+		validation.style.opacity = '0'
+	} else {
+		validation.style.opacity = '1'
+	}
 })
 
 // Functions
@@ -58,6 +61,6 @@ const validateForm = () => {
 		elements[2].value === '' ||
 		elements[3].value === ''
 	) {
-		validation.style.opacity = 1
+		return false
 	}
 }
