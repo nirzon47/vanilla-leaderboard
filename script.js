@@ -2,11 +2,8 @@
 const tbody = document.getElementById('tbody')
 const form = document.getElementById('form')
 const validation = document.getElementById('validation')
-const addFive = document.getElementsByClassName('add5')
-const subtractFive = document.getElementsByClassName('subtract5')
-const deleteButton = document.getElementsByClassName('fa-trash')
 
-// Event Listener
+// Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
 	setTimeout(renderTable(), 300)
 	addButtons()
