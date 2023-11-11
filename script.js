@@ -4,6 +4,7 @@ const form = document.getElementById('form')
 const validation = document.getElementById('validation')
 const addFive = document.getElementsByClassName('add5')
 const subtractFive = document.getElementsByClassName('subtract5')
+const deleteButton = document.getElementsByClassName('fa-trash')
 
 // Event Listener
 document.addEventListener('DOMContentLoaded', () => {
@@ -29,15 +30,20 @@ form.addEventListener('submit', (e) => {
 })
 
 const addButtons = () => {
-	Array.from(addFive).forEach((item) => {
-		item.addEventListener('click', (e) => {
-			add(parseInt(e.target.parentElement.parentElement.id))
-		})
-	})
+	data.forEach((item) => {
+		const id = item.id
+		const tr = document.getElementById(id)
 
-	Array.from(subtractFive).forEach((item) => {
-		item.addEventListener('click', (e) => {
-			subtract(parseInt(e.target.parentElement.parentElement.id))
+		tr.children[2].children[0].addEventListener('click', () => {
+			subtract(id)
+		})
+
+		tr.children[2].children[2].addEventListener('click', () => {
+			add(id)
+		})
+
+		tr.children[3].children[0].addEventListener('click', () => {
+			deleteData(id)
 		})
 	})
 }
@@ -130,6 +136,16 @@ const subtract = (id) => {
 	const item = data.find((item) => item.id === id)
 
 	item.score -= 5
+
+	renderTable()
+}
+
+const deleteData = (id) => {
+	const index = data.findIndex((item) => item.id === id)
+
+	if (index !== -1) {
+		data.splice(index, 1)
+	}
 
 	renderTable()
 }
