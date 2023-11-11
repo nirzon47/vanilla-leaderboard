@@ -2,10 +2,13 @@
 const tbody = document.getElementById('tbody')
 const form = document.getElementById('form')
 const validation = document.getElementById('validation')
+const addFive = document.getElementsByClassName('add5')
+const subtractFive = document.getElementsByClassName('subtract5')
 
 // Event Listener
 document.addEventListener('DOMContentLoaded', () => {
-	setTimeout(renderTable(), 500)
+	setTimeout(renderTable(), 300)
+	addButtons()
 })
 
 form.addEventListener('submit', (e) => {
@@ -24,6 +27,20 @@ form.addEventListener('submit', (e) => {
 		}, 100)
 	}
 })
+
+const addButtons = () => {
+	Array.from(addFive).forEach((item) => {
+		item.addEventListener('click', (e) => {
+			add(parseInt(e.target.parentElement.parentElement.id))
+		})
+	})
+
+	Array.from(subtractFive).forEach((item) => {
+		item.addEventListener('click', (e) => {
+			subtract(parseInt(e.target.parentElement.parentElement.id))
+		})
+	})
+}
 
 // Functions
 const renderTable = () => {
@@ -55,6 +72,8 @@ const renderTable = () => {
 	})
 
 	tbody.appendChild(fragment)
+
+	addButtons()
 }
 
 const sortData = () => {
@@ -87,7 +106,7 @@ const addData = () => {
 		score: elements[3].value,
 	})
 
-	setTimeout(renderTable(), 500)
+	setTimeout(renderTable(), 300)
 }
 
 const resetForm = () => {
@@ -97,4 +116,20 @@ const resetForm = () => {
 	elements[1].value = ''
 	elements[2].value = ''
 	elements[3].value = ''
+}
+
+const add = (id) => {
+	const item = data.find((item) => item.id === id)
+
+	item.score = parseInt(item.score) + 5
+
+	renderTable()
+}
+
+const subtract = (id) => {
+	const item = data.find((item) => item.id === id)
+
+	item.score -= 5
+
+	renderTable()
 }
