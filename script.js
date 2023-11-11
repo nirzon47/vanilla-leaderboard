@@ -5,16 +5,20 @@ const validation = document.getElementById('validation')
 
 // Event Listener
 document.addEventListener('DOMContentLoaded', () => {
-	renderTable()
+	setTimeout(renderTable(), 500)
 })
 
 form.addEventListener('submit', (e) => {
 	e.preventDefault()
 	if (validateForm()) {
 		addData()
-		validation.style.opacity = '0'
+		setTimeout(() => {
+			validation.style.opacity = '0'
+		}, 100)
 	} else {
-		validation.style.opacity = '1'
+		setTimeout(() => {
+			validation.style.opacity = '1'
+		}, 100)
 	}
 })
 
@@ -22,6 +26,7 @@ form.addEventListener('submit', (e) => {
 const renderTable = () => {
 	const fragment = document.createDocumentFragment()
 	tbody.innerHTML = ''
+	tbody.style.opacity = '1'
 	sortData()
 
 	data.forEach((item) => {
@@ -79,5 +84,5 @@ const addData = () => {
 		score: elements[3].value,
 	})
 
-	renderTable()
+	setTimeout(renderTable(), 500)
 }
