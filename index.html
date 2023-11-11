@@ -18,43 +18,44 @@
 		<script src="model.js" defer></script>
 		<script src="script.js" defer></script>
 	</head>
-	<body class="min-h-screen w-screen py-8 px-4">
+	<body class="w-screen min-h-screen px-4 py-8">
 		<!-- All content -->
 		<div class="max-w-6xl mx-auto">
 			<!-- Heading -->
-			<h1 class="font-bold text-3xl mb-4">Points Leaderboards</h1>
+			<h1 class="mb-4 text-3xl font-bold">Points Leaderboards</h1>
 
 			<!-- Form -->
-			<form class="flex justify-between mb-4 flex-wrap gap-2">
+			<form class="flex flex-wrap justify-between gap-2 mb-4" id="form">
 				<input
 					type="text"
 					placeholder="First name"
 					class="input input-bordered w-1/5 min-w-[110px]"
-					required
 				/>
 				<input
 					type="text"
 					placeholder="Last name"
 					class="input input-bordered w-1/5 min-w-[110px]"
-					required
 				/>
 				<input
 					type="text"
 					placeholder="Country"
 					class="input input-bordered w-1/5 min-w-[110px]"
-					required
 				/>
 				<input
 					type="number"
 					placeholder="Score"
 					class="input input-bordered w-1/5 min-w-[110px]"
-					required
 				/>
-				<button class="btn btn-primary w-1/12 min-w-[100px]">Add</button>
+				<button class="btn btn-primary w-1/12 min-w-[100px]" type="submit">
+					Add
+				</button>
 			</form>
 
 			<!-- Validation -->
-			<p class="text-red-600 font-bold text-center py-2 opacity-0 duration-100">
+			<p
+				id="validation"
+				class="py-2 font-bold text-center text-red-600 duration-100 opacity-0"
+			>
 				Please fill in all fields
 			</p>
 
@@ -81,14 +82,14 @@
 						<tr>
 							<td>Nirzon Karmakar</td>
 							<td>India</td>
-							<td class="flex gap-x-4 items-center justify-center">
-								<button class="btn btn-info btn-sm w-12 subtract5">-5</button>
+							<td class="flex items-center justify-center gap-x-4">
+								<button class="w-12 btn btn-info btn-sm subtract5">-5</button>
 								<span>100</span>
-								<button class="btn btn-info btn-sm w-12 add5">+5</button>
+								<button class="w-12 btn btn-info btn-sm add5">+5</button>
 							</td>
 							<td>
 								<i
-									class="fa-solid fa-trash hover:text-red-600 duration-200 cursor-pointer"
+									class="duration-200 cursor-pointer fa-solid fa-trash hover:text-red-600"
 								></i>
 							</td>
 						</tr>

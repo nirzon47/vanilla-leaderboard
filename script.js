@@ -1,9 +1,17 @@
 // DOM Elements
 const tbody = document.getElementById('tbody')
+const form = document.getElementById('form')
+const validation = document.getElementById('validation')
 
 // Event Listener
 document.addEventListener('DOMContentLoaded', () => {
 	renderTable()
+})
+
+form.addEventListener('submit', (e) => {
+	setTimeout(console.log(), 100000)
+	e.preventDefault()
+	validateForm()
 })
 
 // Functions
@@ -39,4 +47,17 @@ const renderTable = () => {
 
 const sortData = () => {
 	data.sort((o1, o2) => o2.score - o1.score)
+}
+
+const validateForm = () => {
+	const elements = form.elements
+
+	if (
+		elements[0].value === '' ||
+		elements[1].value === '' ||
+		elements[2].value === '' ||
+		elements[3].value === ''
+	) {
+		validation.style.opacity = 1
+	}
 }
