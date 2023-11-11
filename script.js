@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 form.addEventListener('submit', (e) => {
 	e.preventDefault()
 	if (validateForm()) {
+		addData()
 		validation.style.opacity = '0'
 	} else {
 		validation.style.opacity = '1'
@@ -62,5 +63,21 @@ const validateForm = () => {
 		elements[3].value === ''
 	) {
 		return false
+	} else {
+		return true
 	}
+}
+
+const addData = () => {
+	const elements = form.elements
+
+	data.push({
+		id: Date.now(),
+		fName: elements[0].value,
+		lName: elements[1].value,
+		country: elements[2].value,
+		score: elements[3].value,
+	})
+
+	renderTable()
 }
